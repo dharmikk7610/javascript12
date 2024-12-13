@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="f1">hello friends..</h1>
+
+        <div class="mypara">
+            <p id="p1">This is a paragraph of text.</p>
+        </div>
+
+        <ul class="myul">
+            <li id="li1">Item 1</li>
+            <li id="li2">Item2</li>
+            <li id="li3">Item3</li>
+            <li id="li4">Item4</li>
+            <li id="li5">Item5</li>
+        </ul>
+
+</body>
+<script>
+   
+   let x = document.querySelector('#f1');
+    console.log(x);
+    x.style.color = "red";
+   
+    let myul = document.querySelector('.myul');
+        myul.style.color = "green";
+    let li = document.createElement('li');
+    li.innerText = 'Item6';
+     li.setAttribute('id',"li6");
+    myul.appendChild(li);
+    
+   
+                       
+
+
+    
+</script>
+</html>

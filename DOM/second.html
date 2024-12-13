@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: darkblue;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .hidden {
+            display: none;
+        }
+        ul {
+            color: green;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Welcome to the DOM Practice Page</h1>
+    <p id="intro-text">This page is designed to help you practice JavaScript DOM manipulation techniques.</p>
+    <button id="toggle-para">Toggle Paragraph Visibility</button>
+
+    <h2>Paragraphs</h2>
+    <div class="paragraph-container">
+        <p class="text">Paragraph 1: This is the first paragraph.</p>
+        <p class="text">Paragraph 2: This is the second paragraph.</p>
+        <p class="text">Paragraph 3: This is the third paragraph.</p>
+    </div>
+
+    <h2>Lists</h2>
+    <ul id="item-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="add-item">Add Item</button>
+
+    <h2>Form</h2>
+    <form id="sample-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="button" id="submit">Submit</button> <br> <br>
+        <button type="button" id="saw-name">Saw name</button>
+    </form>
+
+    <h2>Additional Elements</h2>
+    <div id="box"></div>
+    <button id="change-color">Change Box Color</button>
+</body>
+
+<script>
+    //submit
+    let myarr =[];
+    let x = document.querySelector('#name');
+    document.querySelector('#submit').addEventListener('click',function(){
+        alert(`hello${x.value}`);
+        myarr.push(x.value);
+    });
+    
+
+    let b1 = document.querySelector('#saw-name');
+    
+    b1.addEventListener('click',function(){
+
+        let ul = document.createElement('ul');
+        for(let i=0;i<myarr.length;i++)
+        {
+            let li = document.createElement('li');
+            li.textContent = myarr[i];
+            ul.appendChild(li);
+            document.body.appendChild(ul);
+            
+            // console.log(myarr[i]);
+
+            
+            // alert(myarr[i]);
+        }
+    }) 
+    
+
+
+
+</script>
+</html>
